@@ -1,0 +1,17 @@
+sec:
+  user_agent: "StockAnalyst your-name your-email@example.com"  # SEC requires a real contact
+  max_requests_per_second: 8
+  forms: ["8-K", "10-Q", "10-K", "10-K/A", "10-Q/A"]
+paths:
+  raw: data/raw
+  duckdb: data/duckdb/stockanalyst.duckdb
+  lancedb: data/lancedb
+embedding:
+  model: TBD
+  dimension: TBD
+chunking:
+  target_tokens: 650
+  overlap_tokens: 80
+backfill:
+  annual_quarterly_years: 3
+  eightk_months: 12

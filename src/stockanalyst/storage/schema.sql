@@ -1,0 +1,1 @@
+-- DuckDB DDL: manifest, filings, facts, events

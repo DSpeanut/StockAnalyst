@@ -1,0 +1,33 @@
+[project]
+name = "stockanalyst"
+version = "0.1.0"
+description = "SEC filings ingestion and analyst agent"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx",
+  "tenacity",
+  "pydantic>=2",
+  "pyyaml",
+  "typer",
+  "duckdb",
+  "lancedb",
+  "beautifulsoup4",
+  "lxml",
+  "mlflow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+stockanalyst = "stockanalyst.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stockanalyst"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
